@@ -36,7 +36,7 @@ Under perfect message recovery with nine available reports per region:
 | TERRA-Feature | 4 | 24 | 0.9896 | 1.81% |
 | Handcrafted-Stats | 30 | 30 | 0.9713 | 11.42% |
 
-The repository also contains the message-recovery sensitivity study over missed-detection and false-alarm probabilities. The experiment uses a synthetic address space of 16 valid region tags and evaluates 90 \((P_{\mathrm{MD}},P_{\mathrm{FA}})\) operating points.
+The repository also contains the message-recovery sensitivity study over missed-detection and false-alarm probabilities. The experiment uses a synthetic address space of 16 valid region tags and evaluates 90 (P<sub>MD</sub>, P<sub>FA</sub>) operating points.
 
 Task-bit counts above refer only to the task payload; region-tag and nonce overhead are treated separately in the system model.
 
