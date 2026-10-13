@@ -1,0 +1,57 @@
+# Main TERRA post-training quantization study.
+#
+# Selected operating points:
+#   TERRA-Feature: D=4 learned representation.
+#   Handcrafted benchmark: mean + std over 15 channels -> D=30.
+#   TERRA-Score: scalar local fire probability from the D=4 sensor model.
+#
+# MESSAGE OVERHEAD:
+# region_tag_bits and nonce_bits are intentionally 0 until the final URA message
+# format is fixed. Task-bit results remain valid. Once the two values are fixed,
+# set them here; no model retraining is needed.
+
+quantization_study:
+  output_root: runs/quantization_study_d4score_d4feature_h2
+
+  learned_dataset_root: runs/region_dataset_all15_d4
+  learned_run_root: runs/region_cv_all15_d4_empirical_fixed_budget
+
+  # CHANGED: use the D=4 sensor classifier for TERRA-Score.
+  score_handcrafted_dataset_root: runs/region_dataset_all15_d4
+
+  handcrafted_run_root: runs/handcrafted_stat_ablation/receiver_runs/nested_h2
+  handcrafted_stats:
+    - mean
+    - std
+
+  # Same uniform bit depth on every vector component.
+  learned_bits_per_component: [1, 2, 3, 4, 6, 8]
+  handcrafted_bits_per_component: [1, 2, 3, 4, 6, 8]
+
+  # Scalar probability bits/report.
+  score_bits: [1, 2, 3, 4, 6, 8]
+
+  # Fixed common clipping interval after receiver-standardization.
+  clip_lower: -4.0
+  clip_upper: 4.0
+
+  # Same exact-K report subsets across schemes and quantization levels.
+  k_values: [1, 2, 3, 5, 7, 9]
+  test_subset_seeds: 10
+
+  # Fill these after the final URA message format is fixed.
+  region_tag_bits: 0
+  nonce_bits: 0
+
+  # Must match the frozen DeepSets checkpoints.
+  hidden_dim: 32
+  phi_hidden_dim: 32
+  phi_output_dim: 16
+  rho_hidden_dim: 16
+  dropout: 0.15
+
+  batch_size: 512
+  save_predictions: true
+  device: auto
+  seed: 42
+  n_folds: 3

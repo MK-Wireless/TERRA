@@ -1,0 +1,89 @@
+{
+  "configuration": {
+    "active_users_per_region": 9,
+    "clip_lower": -4.0,
+    "clip_upper": 4.0,
+    "empty_region_probability": 0.0,
+    "message_bits_if_nonce_known": {
+      "Handcrafted-Stats": null,
+      "TERRA-Feature": null,
+      "TERRA-Score": null
+    },
+    "minimum_region_tag_bits": 4,
+    "monte_carlo_seeds": 10,
+    "nonce_bits_for_reporting_only": null,
+    "num_regions": 16,
+    "p_fa_values": [
+      0.0,
+      0.01,
+      0.05,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6
+    ],
+    "p_md_values": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9
+    ],
+    "score_reconstruction_mode": "endpoints",
+    "task_bits": {
+      "Handcrafted-Stats": 30,
+      "TERRA-Feature": 24,
+      "TERRA-Score": 6
+    },
+    "vector_reconstruction_mode": "midrise"
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "handcrafted_checkpoint": "runs\\handcrafted_stat_ablation\\receiver_runs\\nested_h2\\fold_0\\handcrafted\\deepsets\\final\\final_model.pt",
+      "handcrafted_checkpoint_epochs": 10,
+      "learned_checkpoint": "runs\\region_cv_all15_d4_empirical_fixed_budget\\fold_0\\learned\\deepsets\\final\\final_model.pt",
+      "learned_checkpoint_epochs": 11,
+      "n_test_examples": 1265
+    },
+    {
+      "fold": 1,
+      "handcrafted_checkpoint": "runs\\handcrafted_stat_ablation\\receiver_runs\\nested_h2\\fold_1\\handcrafted\\deepsets\\final\\final_model.pt",
+      "handcrafted_checkpoint_epochs": 14,
+      "learned_checkpoint": "runs\\region_cv_all15_d4_empirical_fixed_budget\\fold_1\\learned\\deepsets\\final\\final_model.pt",
+      "learned_checkpoint_epochs": 9,
+      "n_test_examples": 332
+    },
+    {
+      "fold": 2,
+      "handcrafted_checkpoint": "runs\\handcrafted_stat_ablation\\receiver_runs\\nested_h2\\fold_2\\handcrafted\\deepsets\\final\\final_model.pt",
+      "handcrafted_checkpoint_epochs": 10,
+      "learned_checkpoint": "runs\\region_cv_all15_d4_empirical_fixed_budget\\fold_2\\learned\\deepsets\\final\\final_model.pt",
+      "learned_checkpoint_epochs": 8,
+      "n_test_examples": 1208
+    }
+  ],
+  "methodology": {
+    "aggregation": "Metrics are computed for each Monte Carlo realization, averaged within each outer fold, then averaged equally across the three folds.",
+    "error_abstraction": "Only global URA list-level missed detections and false alarms are emulated. No separate payload-bit-error axis is used.",
+    "fa_region_tags": "Each FA has a uniformly random valid region tag. The implementation uses the equivalent binomial thinning of the global FA count to determine contamination of the target regional receiver.",
+    "fa_task_payload": "Uniformly random valid quantized task word for each scheme. A false task payload may equal a genuine task payload.",
+    "full_message_uniqueness": "Synthetic disjoint nonce/message IDs guarantee that FA full messages were not transmitted. Their physical bit length is not used by the synthetic impairment generator.",
+    "operational_metrics": "MDR@FAR<=1% and MDR@FAR<=5% are ROC operating metrics; no test-derived deployment threshold is exported.",
+    "other_regions": "The dataset materializes the target region only. Other valid regions are assumed to have the same configured number of active users and enter through their aggregate recovered-true count when generating the global FA count.",
+    "p_fa": "For each slot, the integer number of false decoded full messages is ratio-matched so that conditional expected F/(T+F) equals the requested global P_FA.",
+    "p_md": "Each transmitted full message is independently missed with probability P_MD."
+  },
+  "outputs": {
+    "aggregate_metrics": "runs\\ura_impairment_study_extended_final_d4score\\ura_impairment_aggregate_metrics.csv",
+    "fold_metrics": "runs\\ura_impairment_study_extended_final_d4score\\ura_impairment_fold_metrics.csv",
+    "seed_metrics": "runs\\ura_impairment_study_extended_final_d4score\\ura_impairment_seed_metrics.csv"
+  }
+}

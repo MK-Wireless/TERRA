@@ -1,0 +1,65 @@
+{
+  "files": [
+    {
+      "path": "C:\\Users\\moham\\Dropbox\\Codes\\PyCharm\\Fire-URA\\data\\raw\\en54\\indoor_fire_detection_multisensornodes_dataset.csv",
+      "shape_read": [
+        20000,
+        24
+      ],
+      "columns": [
+        "Unnamed: 0",
+        "Sensor_ID",
+        "CO2_Room",
+        "CO_Room",
+        "H2_Room",
+        "Humidity_Room",
+        "PM05_Room",
+        "PM100_Room",
+        "PM10_Room",
+        "PM25_Room",
+        "PM40_Room",
+        "PM_Room_Typical_Size",
+        "PM_Total_Room",
+        "Temperature_Room",
+        "UV_Room",
+        "VOC_Room",
+        "VOC_Room_RAW",
+        "scenario_label",
+        "experiment_number",
+        "progress_label",
+        "anomaly_label",
+        "ternary_label",
+        "fire_label",
+        "fire_label_control"
+      ],
+      "dtypes": {
+        "Unnamed: 0": "str",
+        "Sensor_ID": "str",
+        "CO2_Room": "float64",
+        "CO_Room": "float64",
+        "H2_Room": "float64",
+        "Humidity_Room": "float64",
+        "PM05_Room": "float64",
+        "PM100_Room": "float64",
+        "PM10_Room": "float64",
+        "PM25_Room": "float64",
+        "PM40_Room": "float64",
+        "PM_Room_Typical_Size": "float64",
+        "PM_Total_Room": "float64",
+        "Temperature_Room": "float64",
+        "UV_Room": "float64",
+        "VOC_Room": "float64",
+        "VOC_Room_RAW": "float64",
+        "scenario_label": "str",
+        "experiment_number": "str",
+        "progress_label": "str",
+        "anomaly_label": "str",
+        "ternary_label": "str",
+        "fire_label": "str",
+        "fire_label_control": "str"
+      },
+      "schema_error": "\"Could not infer required column 'temperature'. Set data.column_overrides.temperature in the YAML config. Available columns: ['Unnamed: 0', 'Sensor_ID', 'CO2_Room', 'CO_Room', 'H2_Room', 'Humidity_Room', 'PM05_Room', 'PM100_Room', 'PM10_Room', 'PM25_Room', 'PM40_Room', 'PM_Room_Typical_Size', 'PM_Total_Room', 'Temperature_Room', 'UV_Room', 'VOC_Room', 'VOC_Room_RAW', 'scenario_label', 'experiment_number', 'progress_label', 'anomaly_label', 'ternary_label', 'fire_label', 'fire_label_control']\"",
+      "missing_values": {}
+    }
+  ]
+}

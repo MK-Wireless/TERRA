@@ -1,0 +1,791 @@
+{
+  "configuration": {
+    "clip_lower": -4.0,
+    "clip_upper": 4.0,
+    "handcrafted_bits_per_component": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      8
+    ],
+    "handcrafted_run_root": "runs\\handcrafted_stat_ablation\\receiver_runs\\nested_h2",
+    "handcrafted_stats": [
+      "mean",
+      "std"
+    ],
+    "k_values": [
+      1,
+      2,
+      3,
+      5,
+      7,
+      9
+    ],
+    "learned_bits_per_component": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      8
+    ],
+    "learned_dataset_root": "runs\\region_dataset_all15_d4",
+    "learned_run_root": "runs\\region_cv_all15_d4_empirical_fixed_budget",
+    "nonce_bits": 0,
+    "region_tag_bits": 0,
+    "scalar_reconstruction_mode": "midrise",
+    "score_bits": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      8
+    ],
+    "score_handcrafted_dataset_root": "runs\\region_dataset_all15_d4",
+    "test_subset_seeds": 10
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "handcrafted_checkpoint": "runs\\handcrafted_stat_ablation\\receiver_runs\\nested_h2\\fold_0\\handcrafted\\deepsets\\final\\final_model.pt",
+      "handcrafted_checkpoint_epochs": 10,
+      "handcrafted_dimension": 30,
+      "handcrafted_stats": [
+        "mean",
+        "std"
+      ],
+      "learned_checkpoint": "runs\\region_cv_all15_d4_empirical_fixed_budget\\fold_0\\learned\\deepsets\\final\\final_model.pt",
+      "learned_checkpoint_epochs": 11,
+      "learned_dimension": 4,
+      "quantizers": [
+        {
+          "bits_per_component": 1,
+          "development_diagnostics": {
+            "bits_per_component": 1,
+            "clip_fraction_elements": 0.0,
+            "dimension": 4,
+            "mse_after_clipping_only": 0.0,
+            "mse_quantization_given_clipped": 2.308835610062554,
+            "mse_to_original": 2.308835610062554,
+            "n_reports": 13860,
+            "task_bits": 4
+          },
+          "dimension": 4,
+          "lower": -4.0,
+          "reconstruction_mode": "midrise",
+          "scheme": "uniform_per_component_fixed_clip",
+          "total_bits": 4,
+          "upper": 4.0
+        },
+        {
+          "bits_per_component": 2,
+          "development_diagnostics": {
+            "bits_per_component": 2,
+            "clip_fraction_elements": 0.0,
+            "dimension": 4,
+            "mse_after_clipping_only": 0.0,
+            "mse_quantization_given_clipped": 0.34912331430153565,
+            "mse_to_original": 0.34912331430153565,
+            "n_reports": 13860,
+            "task_bits": 8
+          },
+          "dimension": 4,
+          "lower": -4.0,
+          "reconstruction_mode": "midrise",
+          "scheme": "uniform_per_component_fixed_clip",
+          "total_bits": 8,
+          "upper": 4.0
+        },
+        {
+          "bits_per_component": 3,
+          "development_diagnostics": {
+            "bits_per_component": 3,
+            "clip_fraction_elements": 0.0,
+            "dimension": 4,
+            "mse_after_clipping_only": 0.0,
+            "mse_quantization_given_clipped": 0.019836422696789733,
+            "mse_to_original": 0.019836422696789733,
+            "n_reports": 13860,
+            "task_bits": 12
+          },
+          "dimension": 4,
+          "lower": -4.0,
+          "reconstruction_mode": "midrise",
+          "scheme": "uniform_per_component_fixed_clip",
+          "total_bits": 12,
+          "upper": 4.0
+        },
+        {
+          "bits_per_component": 4,
+          "development_diagnostics": {
+            "bits_per_component": 4,
+            "clip_fraction_elements": 0.0,
+            "dimension": 4,
+            "mse_after_clipping_only": 0.0,
+            "mse_quantization_given_clipped": 0.021449073484764727,
+            "mse_to_original": 0.021449073484764727,
+            "n_reports": 13860,
+            "task_bits": 16
+          },
+          "dimension": 4,
+          "lower": -4.0,
+          "reconstruction_mode": "midrise",
+          "scheme": "uniform_per_component_fixed_clip",
+          "total_bits": 16,
+          "upper": 4.0
+        },
+        {
+          "bits_per_component": 6,
+          "development_diagnostics": {
+            "bits_per_component": 6,
+            "clip_fraction_elements": 0.0,
+            "dimension": 4,
+            "mse_after_clipping_only": 0.0,
+            "mse_quantization_given_clipped": 0.002046521239758849,
+            "mse_to_original": 0.002046521239758849,
+            "n_reports": 13860,
+            "task_bits": 24
+          },
+          "dimension": 4,
+          "lower": -4.0,
+          "reconstruction_mode": "midrise",
+          "scheme": "uniform_per_component_fixed_clip",
+          "total_bits": 24,
+          "upper": 4.0
+        },
+        {
+          "bits_per_component": 8,
+          "development_diagnostics": {
+            "bits_per_component": 8,
+            "clip_fraction_elements": 0.0,
+            "dimension": 4,
+            "mse_after_clipping_only": 0.0,
+            "mse_quantization_given_clipped": 9.199698301766212e-05,
+            "mse_to_original": 9.199698301766212e-05,
+            "n_reports": 13860,
+            "task_bits": 32
+          },
+          "dimension": 4,
+          "lower": -4.0,
+          "reconstruction_mode": "midrise",
+          "scheme": "uniform_per_component_fixed_clip",
+          "total_bits": 32,
+          "upper": 4.0
+        },
+        {
+          "bits_per_component": 1,
+          "development_diagnostics": {
+            "bits_per_component": 1,
+            "clip_fraction_elements": 0.010432900432900433,
+            "dimension": 30,
+            "mse_after_clipping_only": 0.24803437317983676,
+            "mse_quantization_given_clipped": 2.878615155082674,
+            "mse_to_original": 3.237097529419492,
+            "n_reports": 13860,
+            "task_bits": 30
+          },
+          "dimension": 30,
+          "lower": -4.0,
+          "reconstruction_mode": "midrise",
+          "scheme": "uniform_per_component_fixed_clip",
+          "total_bits": 30,
+          "upper": 4.0
+        },
+        {
+          "bits_per_component": 2,
+          "development_diagnostics": {
+            "bits_per_component": 2,
+            "clip_fraction_elements": 0.010432900432900433,
+            "dimension": 30,
+            "mse_after_clipping_only": 0.24803437317983676,
+            "mse_quantization_given_clipped": 0.5687500650216212,
+            "mse_to_original": 0.8720084387799488,
+            "n_reports": 13860,
+            "task_bits": 60
+          },
+          "dimension": 30,
+          "lower": -4.0,
+          "reconstruction_mode": "midrise",
+          "scheme": "uniform_per_component_fixed_clip",
+          "total_bits": 60,
+          "upper": 4.0
+        },
+        {
+          "bits_per_component": 3,
+          "development_diagnostics": {
+            "bits_per_component": 3,
+            "clip_fraction_elements": 0.010432900432900433,
+            "dimension": 30,
+            "mse_after_clipping_only": 0.24803437317983676,
+            "mse_quantization_given_clipped": 0.10526131764205816,
+            "mse_to_original": 0.38090769111114026,
+            "n_reports": 13860,
+            "task_bits": 90
+          },
+          "dimension": 30,
+          "lower": -4.0,
+          "reconstruction_mode": "midrise",
+          "scheme": "uniform_per_component_fixed_clip",
+          "total_bits": 90,
+          "upper": 4.0
+        },
+        {
+          "bits_per_component": 4,
+          "development_diagnostics": {
+            "bits_per_component": 4,
+            "clip_fraction_elements": 0.010432900432900433,
+            "dimension": 30,
+            "mse_after_clipping_only": 0.24803437317983676,
+            "mse_quantization_given_clipped": 0.017022257978607375,
+            "mse_to_original": 0.2788626313030669,
+            "n_reports": 13860,
+            "task_bits": 120
+          },
+          "dimension": 30,
+          "lower": -4.0,
+          "reconstruction_mode": "midrise",
+          "scheme": "uniform_per_component_fixed_clip",
+          "total_bits": 120,
+          "upper": 4.0
+        },
+        {
+          "bits_per_component": 6,
+          "development_diagnostics": {
+            "bits_per_component": 6,
+            "clip_fraction_elements": 0.010432900432900433,
+            "dimension": 30,
+            "mse_after_clipping_only": 0.24803437317983676,
+            "mse_quantization_given_clipped": 0.0014670556089780744,
+            "mse_to_original": 0.2529529288249705,
+            "n_reports": 13860,
+            "task_bits": 180
+          },
+          "dimension": 30,
+          "lower": -4.0,
+          "reconstruction_mode": "midrise",
+          "scheme": "uniform_per_component_fixed_clip",
+          "total_bits": 180,
+          "upper": 4.0
+        },
+        {
+          "bits_per_component": 8,
+          "development_diagnostics": {
+            "bits_per_component": 8,
+            "clip_fraction_elements": 0.010432900432900433,
+            "dimension": 30,
+            "mse_after_clipping_only": 0.24803437317983676,
+            "mse_quantization_given_clipped": 6.742916023450938e-05,
+            "mse_to_original": 0.24896467734911024,
+            "n_reports": 13860,
+            "task_bits": 240
+          },
+          "dimension": 30,
+          "lower": -4.0,
+          "reconstruction_mode": "midrise",
+          "scheme": "uniform_per_component_fixed_clip",
+          "total_bits": 240,
+          "upper": 4.0
+        }
+      ]
+    },
+    {
+      "fold": 1,
+      "handcrafted_checkpoint": "runs\\handcrafted_stat_ablation\\receiver_runs\\nested_h2\\fold_1\\handcrafted\\deepsets\\final\\final_model.pt",
+      "handcrafted_checkpoint_epochs": 14,
+      "handcrafted_dimension": 30,
+      "handcrafted_stats": [
+        "mean",
+        "std"
+      ],
+      "learned_checkpoint": "runs\\region_cv_all15_d4_empirical_fixed_budget\\fold_1\\learned\\deepsets\\final\\final_model.pt",
+      "learned_checkpoint_epochs": 9,
+      "learned_dimension": 4,
+      "quantizers": [
+        {
+          "bits_per_component": 1,
+          "development_diagnostics": {
+            "bits_per_component": 1,
+            "clip_fraction_elements": 0.0,
+            "dimension": 4,
+            "mse_after_clipping_only": 0.0,
+            "mse_quantization_given_clipped": 2.745235753318128,
+            "mse_to_original": 2.745235753318128,
+            "n_reports": 22257,
+            "task_bits": 4
+          },
+          "dimension": 4,
+          "lower": -4.0,
+          "reconstruction_mode": "midrise",
+          "scheme": "uniform_per_component_fixed_clip",
+          "total_bits": 4,
+          "upper": 4.0
+        },
+        {
+          "bits_per_component": 2,
+          "development_diagnostics": {
+            "bits_per_component": 2,
+            "clip_fraction_elements": 0.0,
+            "dimension": 4,
+            "mse_after_clipping_only": 0.0,
+            "mse_quantization_given_clipped": 0.4437280743938166,
+            "mse_to_original": 0.4437280743938166,
+            "n_reports": 22257,
+            "task_bits": 8
+          },
+          "dimension": 4,
+          "lower": -4.0,
+          "reconstruction_mode": "midrise",
+          "scheme": "uniform_per_component_fixed_clip",
+          "total_bits": 8,
+          "upper": 4.0
+        },
+        {
+          "bits_per_component": 3,
+          "development_diagnostics": {
+            "bits_per_component": 3,
+            "clip_fraction_elements": 0.0,
+            "dimension": 4,
+            "mse_after_clipping_only": 0.0,
+            "mse_quantization_given_clipped": 0.036304064143036704,
+            "mse_to_original": 0.036304064143036704,
+            "n_reports": 22257,
+            "task_bits": 12
+          },
+          "dimension": 4,
+          "lower": -4.0,
+          "reconstruction_mode": "midrise",
+          "scheme": "uniform_per_component_fixed_clip",
+          "total_bits": 12,
+          "upper": 4.0
+        },
+        {
+          "bits_per_component": 4,
+          "development_diagnostics": {
+            "bits_per_component": 4,
+            "clip_fraction_elements": 0.0,
+            "dimension": 4,
+            "mse_after_clipping_only": 0.0,
+            "mse_quantization_given_clipped": 0.005154805128559124,
+            "mse_to_original": 0.005154805128559124,
+            "n_reports": 22257,
+            "task_bits": 16
+          },
+          "dimension": 4,
+          "lower": -4.0,
+          "reconstruction_mode": "midrise",
+          "scheme": "uniform_per_component_fixed_clip",
+          "total_bits": 16,
+          "upper": 4.0
+        },
+        {
+          "bits_per_component": 6,
+          "development_diagnostics": {
+            "bits_per_component": 6,
+            "clip_fraction_elements": 0.0,
+            "dimension": 4,
+            "mse_after_clipping_only": 0.0,
+            "mse_quantization_given_clipped": 0.00019821735902652538,
+            "mse_to_original": 0.00019821735902652538,
+            "n_reports": 22257,
+            "task_bits": 24
+          },
+          "dimension": 4,
+          "lower": -4.0,
+          "reconstruction_mode": "midrise",
+          "scheme": "uniform_per_component_fixed_clip",
+          "total_bits": 24,
+          "upper": 4.0
+        },
+        {
+          "bits_per_component": 8,
+          "development_diagnostics": {
+            "bits_per_component": 8,
+            "clip_fraction_elements": 0.0,
+            "dimension": 4,
+            "mse_after_clipping_only": 0.0,
+            "mse_quantization_given_clipped": 0.00012554666052022712,
+            "mse_to_original": 0.00012554666052022712,
+            "n_reports": 22257,
+            "task_bits": 32
+          },
+          "dimension": 4,
+          "lower": -4.0,
+          "reconstruction_mode": "midrise",
+          "scheme": "uniform_per_component_fixed_clip",
+          "total_bits": 32,
+          "upper": 4.0
+        },
+        {
+          "bits_per_component": 1,
+          "development_diagnostics": {
+            "bits_per_component": 1,
+            "clip_fraction_elements": 0.009306435428554312,
+            "dimension": 30,
+            "mse_after_clipping_only": 0.30700318486824074,
+            "mse_quantization_given_clipped": 3.021151000297267,
+            "mse_to_original": 3.4466707172231734,
+            "n_reports": 22257,
+            "task_bits": 30
+          },
+          "dimension": 30,
+          "lower": -4.0,
+          "reconstruction_mode": "midrise",
+          "scheme": "uniform_per_component_fixed_clip",
+          "total_bits": 30,
+          "upper": 4.0
+        },
+        {
+          "bits_per_component": 2,
+          "development_diagnostics": {
+            "bits_per_component": 2,
+            "clip_fraction_elements": 0.009306435428554312,
+            "dimension": 30,
+            "mse_after_clipping_only": 0.30700318486824074,
+            "mse_quantization_given_clipped": 0.6190177840710094,
+            "mse_to_original": 0.9852792349680828,
+            "n_reports": 22257,
+            "task_bits": 60
+          },
+          "dimension": 30,
+          "lower": -4.0,
+          "reconstruction_mode": "midrise",
+          "scheme": "uniform_per_component_fixed_clip",
+          "total_bits": 60,
+          "upper": 4.0
+        },
+        {
+          "bits_per_component": 3,
+          "development_diagnostics": {
+            "bits_per_component": 3,
+            "clip_fraction_elements": 0.009306435428554312,
+            "dimension": 30,
+            "mse_after_clipping_only": 0.30700318486824074,
+            "mse_quantization_given_clipped": 0.1197272969733898,
+            "mse_to_original": 0.4563596148560469,
+            "n_reports": 22257,
+            "task_bits": 90
+          },
+          "dimension": 30,
+          "lower": -4.0,
+          "reconstruction_mode": "midrise",
+          "scheme": "uniform_per_component_fixed_clip",
+          "total_bits": 90,
+          "upper": 4.0
+        },
+        {
+          "bits_per_component": 4,
+          "development_diagnostics": {
+            "bits_per_component": 4,
+            "clip_fraction_elements": 0.009306435428554312,
+            "dimension": 30,
+            "mse_after_clipping_only": 0.30700318486824074,
+            "mse_quantization_given_clipped": 0.020510340457377776,
+            "mse_to_original": 0.3423280918328267,
+            "n_reports": 22257,
+            "task_bits": 120
+          },
+          "dimension": 30,
+          "lower": -4.0,
+          "reconstruction_mode": "midrise",
+          "scheme": "uniform_per_component_fixed_clip",
+          "total_bits": 120,
+          "upper": 4.0
+        },
+        {
+          "bits_per_component": 6,
+          "development_diagnostics": {
+            "bits_per_component": 6,
+            "clip_fraction_elements": 0.009306435428554312,
+            "dimension": 30,
+            "mse_after_clipping_only": 0.30700318486824074,
+            "mse_quantization_given_clipped": 0.001117699653991286,
+            "mse_to_original": 0.3118245261490341,
+            "n_reports": 22257,
+            "task_bits": 180
+          },
+          "dimension": 30,
+          "lower": -4.0,
+          "reconstruction_mode": "midrise",
+          "scheme": "uniform_per_component_fixed_clip",
+          "total_bits": 180,
+          "upper": 4.0
+        },
+        {
+          "bits_per_component": 8,
+          "development_diagnostics": {
+            "bits_per_component": 8,
+            "clip_fraction_elements": 0.009306435428554312,
+            "dimension": 30,
+            "mse_after_clipping_only": 0.30700318486824074,
+            "mse_quantization_given_clipped": 9.447020653261806e-05,
+            "mse_to_original": 0.30802356548147386,
+            "n_reports": 22257,
+            "task_bits": 240
+          },
+          "dimension": 30,
+          "lower": -4.0,
+          "reconstruction_mode": "midrise",
+          "scheme": "uniform_per_component_fixed_clip",
+          "total_bits": 240,
+          "upper": 4.0
+        }
+      ]
+    },
+    {
+      "fold": 2,
+      "handcrafted_checkpoint": "runs\\handcrafted_stat_ablation\\receiver_runs\\nested_h2\\fold_2\\handcrafted\\deepsets\\final\\final_model.pt",
+      "handcrafted_checkpoint_epochs": 10,
+      "handcrafted_dimension": 30,
+      "handcrafted_stats": [
+        "mean",
+        "std"
+      ],
+      "learned_checkpoint": "runs\\region_cv_all15_d4_empirical_fixed_budget\\fold_2\\learned\\deepsets\\final\\final_model.pt",
+      "learned_checkpoint_epochs": 8,
+      "learned_dimension": 4,
+      "quantizers": [
+        {
+          "bits_per_component": 1,
+          "development_diagnostics": {
+            "bits_per_component": 1,
+            "clip_fraction_elements": 0.0,
+            "dimension": 4,
+            "mse_after_clipping_only": 0.0,
+            "mse_quantization_given_clipped": 2.274358553427081,
+            "mse_to_original": 2.274358553427081,
+            "n_reports": 14373,
+            "task_bits": 4
+          },
+          "dimension": 4,
+          "lower": -4.0,
+          "reconstruction_mode": "midrise",
+          "scheme": "uniform_per_component_fixed_clip",
+          "total_bits": 4,
+          "upper": 4.0
+        },
+        {
+          "bits_per_component": 2,
+          "development_diagnostics": {
+            "bits_per_component": 2,
+            "clip_fraction_elements": 0.0,
+            "dimension": 4,
+            "mse_after_clipping_only": 0.0,
+            "mse_quantization_given_clipped": 0.33714529257711967,
+            "mse_to_original": 0.33714529257711967,
+            "n_reports": 14373,
+            "task_bits": 8
+          },
+          "dimension": 4,
+          "lower": -4.0,
+          "reconstruction_mode": "midrise",
+          "scheme": "uniform_per_component_fixed_clip",
+          "total_bits": 8,
+          "upper": 4.0
+        },
+        {
+          "bits_per_component": 3,
+          "development_diagnostics": {
+            "bits_per_component": 3,
+            "clip_fraction_elements": 0.0,
+            "dimension": 4,
+            "mse_after_clipping_only": 0.0,
+            "mse_quantization_given_clipped": 0.015184904428059256,
+            "mse_to_original": 0.015184904428059256,
+            "n_reports": 14373,
+            "task_bits": 12
+          },
+          "dimension": 4,
+          "lower": -4.0,
+          "reconstruction_mode": "midrise",
+          "scheme": "uniform_per_component_fixed_clip",
+          "total_bits": 12,
+          "upper": 4.0
+        },
+        {
+          "bits_per_component": 4,
+          "development_diagnostics": {
+            "bits_per_component": 4,
+            "clip_fraction_elements": 0.0,
+            "dimension": 4,
+            "mse_after_clipping_only": 0.0,
+            "mse_quantization_given_clipped": 0.02309842715420058,
+            "mse_to_original": 0.02309842715420058,
+            "n_reports": 14373,
+            "task_bits": 16
+          },
+          "dimension": 4,
+          "lower": -4.0,
+          "reconstruction_mode": "midrise",
+          "scheme": "uniform_per_component_fixed_clip",
+          "total_bits": 16,
+          "upper": 4.0
+        },
+        {
+          "bits_per_component": 6,
+          "development_diagnostics": {
+            "bits_per_component": 6,
+            "clip_fraction_elements": 0.0,
+            "dimension": 4,
+            "mse_after_clipping_only": 0.0,
+            "mse_quantization_given_clipped": 0.0010275774658430085,
+            "mse_to_original": 0.0010275774658430085,
+            "n_reports": 14373,
+            "task_bits": 24
+          },
+          "dimension": 4,
+          "lower": -4.0,
+          "reconstruction_mode": "midrise",
+          "scheme": "uniform_per_component_fixed_clip",
+          "total_bits": 24,
+          "upper": 4.0
+        },
+        {
+          "bits_per_component": 8,
+          "development_diagnostics": {
+            "bits_per_component": 8,
+            "clip_fraction_elements": 0.0,
+            "dimension": 4,
+            "mse_after_clipping_only": 0.0,
+            "mse_quantization_given_clipped": 9.939511815399072e-05,
+            "mse_to_original": 9.939511815399072e-05,
+            "n_reports": 14373,
+            "task_bits": 32
+          },
+          "dimension": 4,
+          "lower": -4.0,
+          "reconstruction_mode": "midrise",
+          "scheme": "uniform_per_component_fixed_clip",
+          "total_bits": 32,
+          "upper": 4.0
+        },
+        {
+          "bits_per_component": 1,
+          "development_diagnostics": {
+            "bits_per_component": 1,
+            "clip_fraction_elements": 0.009819337183144322,
+            "dimension": 30,
+            "mse_after_clipping_only": 0.28578437695099784,
+            "mse_quantization_given_clipped": 2.9660311717909185,
+            "mse_to_original": 3.355062488571404,
+            "n_reports": 14373,
+            "task_bits": 30
+          },
+          "dimension": 30,
+          "lower": -4.0,
+          "reconstruction_mode": "midrise",
+          "scheme": "uniform_per_component_fixed_clip",
+          "total_bits": 30,
+          "upper": 4.0
+        },
+        {
+          "bits_per_component": 2,
+          "development_diagnostics": {
+            "bits_per_component": 2,
+            "clip_fraction_elements": 0.009819337183144322,
+            "dimension": 30,
+            "mse_after_clipping_only": 0.28578437695099784,
+            "mse_quantization_given_clipped": 0.590860892284293,
+            "mse_to_original": 0.9282687391500348,
+            "n_reports": 14373,
+            "task_bits": 60
+          },
+          "dimension": 30,
+          "lower": -4.0,
+          "reconstruction_mode": "midrise",
+          "scheme": "uniform_per_component_fixed_clip",
+          "total_bits": 60,
+          "upper": 4.0
+        },
+        {
+          "bits_per_component": 3,
+          "development_diagnostics": {
+            "bits_per_component": 3,
+            "clip_fraction_elements": 0.009819337183144322,
+            "dimension": 30,
+            "mse_after_clipping_only": 0.28578437695099784,
+            "mse_quantization_given_clipped": 0.11055844152197086,
+            "mse_to_original": 0.42215455343034075,
+            "n_reports": 14373,
+            "task_bits": 90
+          },
+          "dimension": 30,
+          "lower": -4.0,
+          "reconstruction_mode": "midrise",
+          "scheme": "uniform_per_component_fixed_clip",
+          "total_bits": 90,
+          "upper": 4.0
+        },
+        {
+          "bits_per_component": 4,
+          "development_diagnostics": {
+            "bits_per_component": 4,
+            "clip_fraction_elements": 0.009819337183144322,
+            "dimension": 30,
+            "mse_after_clipping_only": 0.28578437695099784,
+            "mse_quantization_given_clipped": 0.018107325907712846,
+            "mse_to_original": 0.31679757033739675,
+            "n_reports": 14373,
+            "task_bits": 120
+          },
+          "dimension": 30,
+          "lower": -4.0,
+          "reconstruction_mode": "midrise",
+          "scheme": "uniform_per_component_fixed_clip",
+          "total_bits": 120,
+          "upper": 4.0
+        },
+        {
+          "bits_per_component": 6,
+          "development_diagnostics": {
+            "bits_per_component": 6,
+            "clip_fraction_elements": 0.009819337183144322,
+            "dimension": 30,
+            "mse_after_clipping_only": 0.28578437695099784,
+            "mse_quantization_given_clipped": 0.0012621923069179547,
+            "mse_to_original": 0.29027303612758726,
+            "n_reports": 14373,
+            "task_bits": 180
+          },
+          "dimension": 30,
+          "lower": -4.0,
+          "reconstruction_mode": "midrise",
+          "scheme": "uniform_per_component_fixed_clip",
+          "total_bits": 180,
+          "upper": 4.0
+        },
+        {
+          "bits_per_component": 8,
+          "development_diagnostics": {
+            "bits_per_component": 8,
+            "clip_fraction_elements": 0.009819337183144322,
+            "dimension": 30,
+            "mse_after_clipping_only": 0.28578437695099784,
+            "mse_quantization_given_clipped": 7.52197421198321e-05,
+            "mse_to_original": 0.28666621341053555,
+            "n_reports": 14373,
+            "task_bits": 240
+          },
+          "dimension": 30,
+          "lower": -4.0,
+          "reconstruction_mode": "midrise",
+          "scheme": "uniform_per_component_fixed_clip",
+          "total_bits": 240,
+          "upper": 4.0
+        }
+      ]
+    }
+  ],
+  "methodology": {
+    "Handcrafted-Stats": "The selected mean+std handcrafted benchmark is sliced from the full handcrafted report, standardized with its frozen regional receiver statistics, and independently scalar-quantized per element with the identical rule.",
+    "TERRA-Feature": "The selected D=4 learned representation is standardized using the frozen regional receiver's development statistics, clipped to one common fixed interval, and uniformly scalar-quantized independently per element with the same bit depth on every component.",
+    "TERRA-Score": "The D=35 local fire probability is uniformly quantized on [0,1] and averaged across exact-K recovered reports.",
+    "aggregation": "Metrics are computed per subset realization, averaged within each outer fold, then averaged equally across the three folds.",
+    "bit_accounting": "task_bits count only the quantized task payload. message_bits add region-tag and nonce overhead. regional_message_bits equal K times message_bits for the exact-K condition.",
+    "operational_metrics": "MDR@FAR<=1% and MDR@FAR<=5% are ROC performance metrics; no test-derived deployment threshold is exported.",
+    "receiver": "All regional receivers are frozen; no quantization-aware training or receiver fine-tuning is performed.",
+    "ura_note": "This study assumes selected reports are recovered correctly. URA missed detections, false alarms, and payload/tag errors are handled in the subsequent channel-impairment study."
+  }
+}

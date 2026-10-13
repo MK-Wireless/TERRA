@@ -1,0 +1,529 @@
+{
+  "dataset_info": {
+    "channels": [
+      "co2",
+      "co",
+      "h2",
+      "humidity",
+      "pm05",
+      "pm100",
+      "pm10",
+      "pm25",
+      "pm40",
+      "pm_typical_size",
+      "pm_total",
+      "temperature",
+      "uv",
+      "voc",
+      "voc_raw"
+    ],
+    "feature_names": [
+      "co2__mean",
+      "co__mean",
+      "h2__mean",
+      "humidity__mean",
+      "pm05__mean",
+      "pm100__mean",
+      "pm10__mean",
+      "pm25__mean",
+      "pm40__mean",
+      "pm_typical_size__mean",
+      "pm_total__mean",
+      "temperature__mean",
+      "uv__mean",
+      "voc__mean",
+      "voc_raw__mean",
+      "co2__std",
+      "co__std",
+      "h2__std",
+      "humidity__std",
+      "pm05__std",
+      "pm100__std",
+      "pm10__std",
+      "pm25__std",
+      "pm40__std",
+      "pm_typical_size__std",
+      "pm_total__std",
+      "temperature__std",
+      "uv__std",
+      "voc__std",
+      "voc_raw__std",
+      "co2__min",
+      "co__min",
+      "h2__min",
+      "humidity__min",
+      "pm05__min",
+      "pm100__min",
+      "pm10__min",
+      "pm25__min",
+      "pm40__min",
+      "pm_typical_size__min",
+      "pm_total__min",
+      "temperature__min",
+      "uv__min",
+      "voc__min",
+      "voc_raw__min",
+      "co2__max",
+      "co__max",
+      "h2__max",
+      "humidity__max",
+      "pm05__max",
+      "pm100__max",
+      "pm10__max",
+      "pm25__max",
+      "pm40__max",
+      "pm_typical_size__max",
+      "pm_total__max",
+      "temperature__max",
+      "uv__max",
+      "voc__max",
+      "voc_raw__max",
+      "co2__last",
+      "co__last",
+      "h2__last",
+      "humidity__last",
+      "pm05__last",
+      "pm100__last",
+      "pm10__last",
+      "pm25__last",
+      "pm40__last",
+      "pm_typical_size__last",
+      "pm_total__last",
+      "temperature__last",
+      "uv__last",
+      "voc__last",
+      "voc_raw__last",
+      "co2__delta",
+      "co__delta",
+      "h2__delta",
+      "humidity__delta",
+      "pm05__delta",
+      "pm100__delta",
+      "pm10__delta",
+      "pm25__delta",
+      "pm40__delta",
+      "pm_typical_size__delta",
+      "pm_total__delta",
+      "temperature__delta",
+      "uv__delta",
+      "voc__delta",
+      "voc_raw__delta",
+      "co2__slope",
+      "co__slope",
+      "h2__slope",
+      "humidity__slope",
+      "pm05__slope",
+      "pm100__slope",
+      "pm10__slope",
+      "pm25__slope",
+      "pm40__slope",
+      "pm_typical_size__slope",
+      "pm_total__slope",
+      "temperature__slope",
+      "uv__slope",
+      "voc__slope",
+      "voc_raw__slope"
+    ],
+    "fold_dimensions": [
+      105,
+      105,
+      105
+    ],
+    "full_dimension": 105,
+    "n_channels": 15
+  },
+  "leave_one_out_variants": [
+    {
+      "included_stats": [
+        "std",
+        "min",
+        "max",
+        "last",
+        "delta",
+        "slope"
+      ],
+      "label": "without_mean",
+      "omitted_stat": "mean",
+      "reused_from": null,
+      "variant_id": "loo_without_mean"
+    },
+    {
+      "included_stats": [
+        "mean",
+        "min",
+        "max",
+        "last",
+        "delta",
+        "slope"
+      ],
+      "label": "without_std",
+      "omitted_stat": "std",
+      "reused_from": null,
+      "variant_id": "loo_without_std"
+    },
+    {
+      "included_stats": [
+        "mean",
+        "std",
+        "max",
+        "last",
+        "delta",
+        "slope"
+      ],
+      "label": "without_min",
+      "omitted_stat": "min",
+      "reused_from": null,
+      "variant_id": "loo_without_min"
+    },
+    {
+      "included_stats": [
+        "mean",
+        "std",
+        "min",
+        "last",
+        "delta",
+        "slope"
+      ],
+      "label": "without_max",
+      "omitted_stat": "max",
+      "reused_from": null,
+      "variant_id": "loo_without_max"
+    },
+    {
+      "included_stats": [
+        "mean",
+        "std",
+        "min",
+        "max",
+        "delta",
+        "slope"
+      ],
+      "label": "without_last",
+      "omitted_stat": "last",
+      "reused_from": null,
+      "variant_id": "loo_without_last"
+    },
+    {
+      "included_stats": [
+        "mean",
+        "std",
+        "min",
+        "max",
+        "last",
+        "slope"
+      ],
+      "label": "without_delta",
+      "omitted_stat": "delta",
+      "reused_from": "nested_h6",
+      "variant_id": "loo_without_delta"
+    },
+    {
+      "included_stats": [
+        "mean",
+        "std",
+        "min",
+        "max",
+        "last",
+        "delta"
+      ],
+      "label": "without_slope",
+      "omitted_stat": "slope",
+      "reused_from": null,
+      "variant_id": "loo_without_slope"
+    }
+  ],
+  "nested_variants": [
+    {
+      "included_stats": [
+        "mean"
+      ],
+      "label": "H1",
+      "variant_id": "nested_h1"
+    },
+    {
+      "included_stats": [
+        "mean",
+        "std"
+      ],
+      "label": "H2",
+      "variant_id": "nested_h2"
+    },
+    {
+      "included_stats": [
+        "mean",
+        "std",
+        "slope"
+      ],
+      "label": "H3",
+      "variant_id": "nested_h3"
+    },
+    {
+      "included_stats": [
+        "mean",
+        "std",
+        "slope",
+        "last"
+      ],
+      "label": "H4",
+      "variant_id": "nested_h4"
+    },
+    {
+      "included_stats": [
+        "mean",
+        "std",
+        "slope",
+        "last",
+        "max"
+      ],
+      "label": "H5",
+      "variant_id": "nested_h5"
+    },
+    {
+      "included_stats": [
+        "mean",
+        "std",
+        "slope",
+        "last",
+        "max",
+        "min"
+      ],
+      "label": "H6",
+      "variant_id": "nested_h6"
+    },
+    {
+      "included_stats": [
+        "mean",
+        "std",
+        "slope",
+        "last",
+        "max",
+        "min",
+        "delta"
+      ],
+      "label": "H7",
+      "variant_id": "nested_h7"
+    }
+  ],
+  "planned_unique_runs": [
+    {
+      "config": "C:\\Users\\moham\\Dropbox\\Codes\\PyCharm\\Fire-URA\\runs\\handcrafted_stat_ablation\\generated_configs\\nested_h1.yaml",
+      "dataset_root_for_run": "C:\\Users\\moham\\Dropbox\\Codes\\PyCharm\\Fire-URA\\runs\\handcrafted_stat_ablation\\_temporary_sliced_datasets\\nested_h1",
+      "dimension": 15,
+      "family": "nested",
+      "included_stats": [
+        "mean"
+      ],
+      "label": "H1",
+      "receiver_run_root": "C:\\Users\\moham\\Dropbox\\Codes\\PyCharm\\Fire-URA\\runs\\handcrafted_stat_ablation\\receiver_runs\\nested_h1",
+      "reuse_full_baseline": false,
+      "variant_id": "nested_h1"
+    },
+    {
+      "config": "C:\\Users\\moham\\Dropbox\\Codes\\PyCharm\\Fire-URA\\runs\\handcrafted_stat_ablation\\generated_configs\\nested_h2.yaml",
+      "dataset_root_for_run": "C:\\Users\\moham\\Dropbox\\Codes\\PyCharm\\Fire-URA\\runs\\handcrafted_stat_ablation\\_temporary_sliced_datasets\\nested_h2",
+      "dimension": 30,
+      "family": "nested",
+      "included_stats": [
+        "mean",
+        "std"
+      ],
+      "label": "H2",
+      "receiver_run_root": "C:\\Users\\moham\\Dropbox\\Codes\\PyCharm\\Fire-URA\\runs\\handcrafted_stat_ablation\\receiver_runs\\nested_h2",
+      "reuse_full_baseline": false,
+      "variant_id": "nested_h2"
+    },
+    {
+      "config": "C:\\Users\\moham\\Dropbox\\Codes\\PyCharm\\Fire-URA\\runs\\handcrafted_stat_ablation\\generated_configs\\nested_h3.yaml",
+      "dataset_root_for_run": "C:\\Users\\moham\\Dropbox\\Codes\\PyCharm\\Fire-URA\\runs\\handcrafted_stat_ablation\\_temporary_sliced_datasets\\nested_h3",
+      "dimension": 45,
+      "family": "nested",
+      "included_stats": [
+        "mean",
+        "std",
+        "slope"
+      ],
+      "label": "H3",
+      "receiver_run_root": "C:\\Users\\moham\\Dropbox\\Codes\\PyCharm\\Fire-URA\\runs\\handcrafted_stat_ablation\\receiver_runs\\nested_h3",
+      "reuse_full_baseline": false,
+      "variant_id": "nested_h3"
+    },
+    {
+      "config": "C:\\Users\\moham\\Dropbox\\Codes\\PyCharm\\Fire-URA\\runs\\handcrafted_stat_ablation\\generated_configs\\nested_h4.yaml",
+      "dataset_root_for_run": "C:\\Users\\moham\\Dropbox\\Codes\\PyCharm\\Fire-URA\\runs\\handcrafted_stat_ablation\\_temporary_sliced_datasets\\nested_h4",
+      "dimension": 60,
+      "family": "nested",
+      "included_stats": [
+        "mean",
+        "std",
+        "slope",
+        "last"
+      ],
+      "label": "H4",
+      "receiver_run_root": "C:\\Users\\moham\\Dropbox\\Codes\\PyCharm\\Fire-URA\\runs\\handcrafted_stat_ablation\\receiver_runs\\nested_h4",
+      "reuse_full_baseline": false,
+      "variant_id": "nested_h4"
+    },
+    {
+      "config": "C:\\Users\\moham\\Dropbox\\Codes\\PyCharm\\Fire-URA\\runs\\handcrafted_stat_ablation\\generated_configs\\nested_h5.yaml",
+      "dataset_root_for_run": "C:\\Users\\moham\\Dropbox\\Codes\\PyCharm\\Fire-URA\\runs\\handcrafted_stat_ablation\\_temporary_sliced_datasets\\nested_h5",
+      "dimension": 75,
+      "family": "nested",
+      "included_stats": [
+        "mean",
+        "std",
+        "slope",
+        "last",
+        "max"
+      ],
+      "label": "H5",
+      "receiver_run_root": "C:\\Users\\moham\\Dropbox\\Codes\\PyCharm\\Fire-URA\\runs\\handcrafted_stat_ablation\\receiver_runs\\nested_h5",
+      "reuse_full_baseline": false,
+      "variant_id": "nested_h5"
+    },
+    {
+      "config": "C:\\Users\\moham\\Dropbox\\Codes\\PyCharm\\Fire-URA\\runs\\handcrafted_stat_ablation\\generated_configs\\nested_h6.yaml",
+      "dataset_root_for_run": "C:\\Users\\moham\\Dropbox\\Codes\\PyCharm\\Fire-URA\\runs\\handcrafted_stat_ablation\\_temporary_sliced_datasets\\nested_h6",
+      "dimension": 90,
+      "family": "nested",
+      "included_stats": [
+        "mean",
+        "std",
+        "slope",
+        "last",
+        "max",
+        "min"
+      ],
+      "label": "H6",
+      "receiver_run_root": "C:\\Users\\moham\\Dropbox\\Codes\\PyCharm\\Fire-URA\\runs\\handcrafted_stat_ablation\\receiver_runs\\nested_h6",
+      "reuse_full_baseline": false,
+      "variant_id": "nested_h6"
+    },
+    {
+      "config": "C:\\Users\\moham\\Dropbox\\Codes\\PyCharm\\Fire-URA\\runs\\handcrafted_stat_ablation\\generated_configs\\nested_h7.yaml",
+      "dataset_root_for_run": "C:\\Users\\moham\\Dropbox\\Codes\\PyCharm\\Fire-URA\\runs\\region_dataset_all15_d35",
+      "dimension": 105,
+      "family": "nested",
+      "included_stats": [
+        "mean",
+        "std",
+        "slope",
+        "last",
+        "max",
+        "min",
+        "delta"
+      ],
+      "label": "H7",
+      "receiver_run_root": "C:\\Users\\moham\\Dropbox\\Codes\\PyCharm\\Fire-URA\\runs\\handcrafted_stat_ablation\\receiver_runs\\nested_h7",
+      "reuse_full_baseline": true,
+      "variant_id": "nested_h7"
+    },
+    {
+      "config": "C:\\Users\\moham\\Dropbox\\Codes\\PyCharm\\Fire-URA\\runs\\handcrafted_stat_ablation\\generated_configs\\loo_without_mean.yaml",
+      "dataset_root_for_run": "C:\\Users\\moham\\Dropbox\\Codes\\PyCharm\\Fire-URA\\runs\\handcrafted_stat_ablation\\_temporary_sliced_datasets\\loo_without_mean",
+      "dimension": 90,
+      "family": "leave_one_out",
+      "included_stats": [
+        "std",
+        "min",
+        "max",
+        "last",
+        "delta",
+        "slope"
+      ],
+      "label": "without_mean",
+      "receiver_run_root": "C:\\Users\\moham\\Dropbox\\Codes\\PyCharm\\Fire-URA\\runs\\handcrafted_stat_ablation\\receiver_runs\\loo_without_mean",
+      "reuse_full_baseline": false,
+      "variant_id": "loo_without_mean"
+    },
+    {
+      "config": "C:\\Users\\moham\\Dropbox\\Codes\\PyCharm\\Fire-URA\\runs\\handcrafted_stat_ablation\\generated_configs\\loo_without_std.yaml",
+      "dataset_root_for_run": "C:\\Users\\moham\\Dropbox\\Codes\\PyCharm\\Fire-URA\\runs\\handcrafted_stat_ablation\\_temporary_sliced_datasets\\loo_without_std",
+      "dimension": 90,
+      "family": "leave_one_out",
+      "included_stats": [
+        "mean",
+        "min",
+        "max",
+        "last",
+        "delta",
+        "slope"
+      ],
+      "label": "without_std",
+      "receiver_run_root": "C:\\Users\\moham\\Dropbox\\Codes\\PyCharm\\Fire-URA\\runs\\handcrafted_stat_ablation\\receiver_runs\\loo_without_std",
+      "reuse_full_baseline": false,
+      "variant_id": "loo_without_std"
+    },
+    {
+      "config": "C:\\Users\\moham\\Dropbox\\Codes\\PyCharm\\Fire-URA\\runs\\handcrafted_stat_ablation\\generated_configs\\loo_without_min.yaml",
+      "dataset_root_for_run": "C:\\Users\\moham\\Dropbox\\Codes\\PyCharm\\Fire-URA\\runs\\handcrafted_stat_ablation\\_temporary_sliced_datasets\\loo_without_min",
+      "dimension": 90,
+      "family": "leave_one_out",
+      "included_stats": [
+        "mean",
+        "std",
+        "max",
+        "last",
+        "delta",
+        "slope"
+      ],
+      "label": "without_min",
+      "receiver_run_root": "C:\\Users\\moham\\Dropbox\\Codes\\PyCharm\\Fire-URA\\runs\\handcrafted_stat_ablation\\receiver_runs\\loo_without_min",
+      "reuse_full_baseline": false,
+      "variant_id": "loo_without_min"
+    },
+    {
+      "config": "C:\\Users\\moham\\Dropbox\\Codes\\PyCharm\\Fire-URA\\runs\\handcrafted_stat_ablation\\generated_configs\\loo_without_max.yaml",
+      "dataset_root_for_run": "C:\\Users\\moham\\Dropbox\\Codes\\PyCharm\\Fire-URA\\runs\\handcrafted_stat_ablation\\_temporary_sliced_datasets\\loo_without_max",
+      "dimension": 90,
+      "family": "leave_one_out",
+      "included_stats": [
+        "mean",
+        "std",
+        "min",
+        "last",
+        "delta",
+        "slope"
+      ],
+      "label": "without_max",
+      "receiver_run_root": "C:\\Users\\moham\\Dropbox\\Codes\\PyCharm\\Fire-URA\\runs\\handcrafted_stat_ablation\\receiver_runs\\loo_without_max",
+      "reuse_full_baseline": false,
+      "variant_id": "loo_without_max"
+    },
+    {
+      "config": "C:\\Users\\moham\\Dropbox\\Codes\\PyCharm\\Fire-URA\\runs\\handcrafted_stat_ablation\\generated_configs\\loo_without_last.yaml",
+      "dataset_root_for_run": "C:\\Users\\moham\\Dropbox\\Codes\\PyCharm\\Fire-URA\\runs\\handcrafted_stat_ablation\\_temporary_sliced_datasets\\loo_without_last",
+      "dimension": 90,
+      "family": "leave_one_out",
+      "included_stats": [
+        "mean",
+        "std",
+        "min",
+        "max",
+        "delta",
+        "slope"
+      ],
+      "label": "without_last",
+      "receiver_run_root": "C:\\Users\\moham\\Dropbox\\Codes\\PyCharm\\Fire-URA\\runs\\handcrafted_stat_ablation\\receiver_runs\\loo_without_last",
+      "reuse_full_baseline": false,
+      "variant_id": "loo_without_last"
+    },
+    {
+      "config": "C:\\Users\\moham\\Dropbox\\Codes\\PyCharm\\Fire-URA\\runs\\handcrafted_stat_ablation\\generated_configs\\loo_without_slope.yaml",
+      "dataset_root_for_run": "C:\\Users\\moham\\Dropbox\\Codes\\PyCharm\\Fire-URA\\runs\\handcrafted_stat_ablation\\_temporary_sliced_datasets\\loo_without_slope",
+      "dimension": 90,
+      "family": "leave_one_out",
+      "included_stats": [
+        "mean",
+        "std",
+        "min",
+        "max",
+        "last",
+        "delta"
+      ],
+      "label": "without_slope",
+      "receiver_run_root": "C:\\Users\\moham\\Dropbox\\Codes\\PyCharm\\Fire-URA\\runs\\handcrafted_stat_ablation\\receiver_runs\\loo_without_slope",
+      "reuse_full_baseline": false,
+      "variant_id": "loo_without_slope"
+    }
+  ]
+}

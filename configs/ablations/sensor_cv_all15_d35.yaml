@@ -1,0 +1,137 @@
+data:
+  paths:
+    - data/raw/en54/indoor_fire_detection_multisensornodes_dataset.csv
+
+  delimiter: auto
+  encoding: utf-8
+
+  channels:
+    - co2
+    - co
+    - h2
+    - humidity
+    - pm05
+    - pm100
+    - pm10
+    - pm25
+    - pm40
+    - pm_typical_size
+    - pm_total
+    - temperature
+    - uv
+    - voc
+    - voc_raw
+
+  column_overrides:
+    timestamp: "Unnamed: 0"
+    sensor_id: Sensor_ID
+
+    co2: CO2_Room
+    co: CO_Room
+    h2: H2_Room
+    humidity: Humidity_Room
+    pm05: PM05_Room
+    pm100: PM100_Room
+    pm10: PM10_Room
+    pm25: PM25_Room
+    pm40: PM40_Room
+    pm_typical_size: PM_Room_Typical_Size
+    pm_total: PM_Total_Room
+    temperature: Temperature_Room
+    uv: UV_Room
+    voc: VOC_Room
+    voc_raw: VOC_Room_RAW
+
+    scenario_label: scenario_label
+    progress_label: progress_label
+    ternary_label: ternary_label
+    fire_label: fire_label
+    fire_label_control: fire_label_control
+  fire_positive_values:
+  - fire
+  episode:
+    boundary_columns:
+    - scenario_label
+    max_gap_seconds: 30.0
+    overwrite_existing: false
+window:
+  length: 12
+  stride: 12
+  target_mode: last
+split:
+  strategy: sensor_repetition_cv
+  seed: 42
+sensor_model:
+  architecture: invariant_mlp
+  output_tag: all15_d35
+  hidden_channels: 64
+  embedding_dim: 35
+  dropout: 0.2
+  embedding_activation: tanh
+  head_dropout: 0.0
+
+  invariant_use_absolute: false
+  invariant_use_relative: true
+  invariant_use_differences: true
+  invariant_use_shape: true
+
+  invariant_use_statistics: true
+  invariant_use_level_statistics: false
+  invariant_use_invariant_statistics: true
+#sensor_model:
+#  architecture: invariant_mlp
+#  output_tag: invariant_mlp
+#  hidden_channels: 24
+#  embedding_dim: 8
+#  dropout: 0.2
+#  embedding_activation: tanh
+#  head_dropout: 0.0
+#  invariant_use_absolute: true
+#  invariant_use_relative: true
+#  invariant_use_differences: true
+#  invariant_use_shape: true
+#  invariant_use_statistics: true
+sensor_training:
+  seed: 42
+  device: auto
+  target_column: fire_label_control
+  excluded_progress_labels: []
+  epochs: 30
+  batch_size: 256
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  num_workers: 4
+  pin_memory: true
+  sampling: episode_balanced
+  samples_per_epoch: 20000
+  class_balance: none
+  early_stopping_patience: 6
+  minimum_improvement: 0.0001
+  gradient_clip_norm: 5.0
+  amp: true
+  augmentation:
+    enabled: true
+    gain_std: 0.01
+    bias_std: 0.02
+    noise_std: 0.02
+    missing_sample_probability: 0.01
+    max_time_shift: 1
+  normalization:
+    mode: per_sensor_background
+    target_column: fire_label_control
+    background_value: 0
+    minimum_samples_per_sensor: 50
+    scenario_column: scenario_label
+    scenario_values:
+    - Background
+sensor_cv:
+  n_folds: 3
+  fire_scenarios:
+  - Cable
+  - Candles
+  - Lunts
+  - Wood
+sensor_baseline:
+  c: 1.0
+  max_iter: 2000
+  solver: lbfgs

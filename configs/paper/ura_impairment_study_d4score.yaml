@@ -1,0 +1,74 @@
+# Synthetic URA list-recovery impairment study for TERRA.
+#
+# IMPORTANT:
+# - This experiment operates directly in the (P_MD, P_FA) plane.
+# - There is NO separate payload-bit-error process.
+# - P_MD and P_FA are global URA list-recovery quantities before region grouping.
+# - FA region tags are uniformly random among VALID region tags.
+# - FA task payloads are uniformly random valid quantized task words.
+# - The nonce length does NOT affect the imposed synthetic errors.
+#
+# Before the full run, set num_regions to the intended number of simultaneously
+# addressable spatial regions, or pass --num-regions N at the command line.
+# It is intentionally left null rather than inventing a paper-specific value.
+
+
+
+
+
+ura_impairment_study:
+  output_root: runs/ura_impairment_study_extended_final_d4score
+
+  learned_dataset_root: runs/region_dataset_all15_d4
+  learned_run_root: runs/region_cv_all15_d4_empirical_fixed_budget
+
+  score_handcrafted_dataset_root: runs/region_dataset_all15_d4
+
+  handcrafted_run_root: runs/handcrafted_stat_ablation/receiver_runs/nested_h2
+  handcrafted_stats:
+    - mean
+    - std
+
+  # Locked task-payload operating points from the final mid-rise study.
+  score_bits: 6
+
+  feature_bits_per_component: 6       # D=4 -> 24 task bits/report
+  handcrafted_bits_per_component: 1  # D=30 -> 30 task bits/report
+
+  # TERRA-Feature / Handcrafted quantization.
+  clip_lower: -4.0
+  clip_upper: 4.0
+  vector_reconstruction_mode: midrise
+
+  # Full-report physical activity before URA missed detections.
+  active_users_per_region: 9
+
+  # Random FA tags are uniform over these valid regions.
+  num_regions: 16
+
+  # Global URA list-level impairment grid.
+  p_md_values: [ 0.00, 0.10, 0.20, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80, 0.90 ]
+  p_fa_values: [ 0.00, 0.01, 0.05, 0.10, 0.20, 0.30, 0.40, 0.50, 0.60 ]
+
+  # Paired Monte Carlo realizations across all three reporting schemes.
+  monte_carlo_seeds: 10
+
+  # If a region receives neither a correctly recovered true report nor an FA,
+  # its fire probability is set to this value for ALL schemes.
+  empty_region_probability: 0.0
+
+  # Optional physical message accounting only. This value is NOT used to
+  # generate MD/FA. Leave null until the actual nonce length is fixed.
+  nonce_bits: null
+
+  # Must match the frozen DeepSets checkpoints.
+  hidden_dim: 32
+  phi_hidden_dim: 32
+  phi_output_dim: 16
+  rho_hidden_dim: 16
+  dropout: 0.15
+
+  batch_size: 512
+  device: auto
+  seed: 42
+  n_folds: 3

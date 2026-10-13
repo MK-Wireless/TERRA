@@ -1,0 +1,37 @@
+sensor_cv_run_root: runs/sensor_cv_all15_d4
+sensor_config_path: runs/sensor_cv_all15_d4/config_all15_d4.yaml
+region_dataset_root: runs/region_dataset_all15_d4
+
+region_dataset:
+  output_root: runs/region_dataset_all15_d4
+  device: auto
+  batch_size: 1024
+  num_workers: 0
+  pin_memory: true
+  expected_max_sensors: 9
+region_training:
+  output_root: runs/region_cv_all15_d4_empirical_fixed_budget
+  device: auto
+  seed: 42
+  n_folds: 3
+  representations:
+  - learned
+  include_average_local_probability: false
+  include_mean_logreg: false
+  neural_methods:
+  - deepsets
+  sampling_mode: empirical_fixed_budget
+  batch_size: 256
+  num_workers: 0
+  samples_per_epoch: 6000
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  epochs: 30
+  early_stopping_patience: 6
+  minimum_improvement: 0.0001
+  gradient_clip_norm: 5.0
+  hidden_dim: 32
+  phi_hidden_dim: 32
+  phi_output_dim: 16
+  rho_hidden_dim: 16
+  dropout: 0.15
