@@ -7,6 +7,10 @@ Mohammad Kazemi and Julie A. McCann
 Imperial College London
 Accepted at **IoT '26 — International Conference on the Internet of Things**, Newcastle upon Tyne, UK, November 17–20, 2026.
 
+<p align="center">
+  <img src="figures/terra_architecture.png" alt="TERRA architecture" width="900">
+</p>
+
 TERRA (**Task-Oriented Edge Representation and Regional Aggregation**) is an edge-AI framework for distributed sensing in which devices communicate compact task-relevant reports without persistent device identities. Reports are grouped by geographic region and aggregated to produce regional event decisions.
 
 The repository accompanies the fire-detection proof-of-concept evaluation reported in the paper.
